@@ -3,7 +3,7 @@ class UsersController < ApplicationController
       user = User.new(user_params)
   
       unless user.save
-        return render json: { message: user.errors.full_messages },
+        return render json: { messages: user.errors.messages },
                       status: :unprocessable_entity
       end
   
